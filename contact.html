@@ -1,9 +1,54 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Contact page</title>
-    </head>
-    <body>
-       
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <!--Linking the CSS file for the home page-->
+    <link rel="stylesheet" href=""></link>
+</head>
+<body>
+    <!--Creating a Home, About, and Contact page with navigation-->
+<section class="navigation">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul> 
+    </nav>
+</section>
+
+<section class="contact">
+    <div>
+        <hr>
+        <!--Contact section-->
+        <h2>Get in Touch</h2>
+        <p>Want to get in touch or ask any questions, feel free to fill out the form below:</p>
+        <!--A area to fill out information-->
+        
+            <!--A space to fill out your First Name-->
+            <label for="f_name">First Name: </label>
+            <input type="text" id ="f_name" name="f_name"><br><br>
+
+            <!--A space to fill out your Last Name-->
+            <label for="l_name">Last Name: </label>
+            <input type="text" id ="l_name" name="l_name"><br><br> 
+
+            <!--A space to fill out your Email-->
+            <label for ="email">Email Address: </label>
+            <input type="text" id ="email" name="email"><br><br> 
+
+            <!--A space to fill out your Number-->
+            <label for ="phone">Phone Number: </label>
+            <input type="text" id ="phone" name="phone"><br><br> 
+
+            <p>Click "Submit" to send over your information.</p>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>
+
+</body>
 </html>
