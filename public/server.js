@@ -3,13 +3,25 @@ const express = require('express');
 const app = express();
 const port = 3001; //Linking with port "3001"
 
-app.use(express.static(__dirname + '/Huyghue_portfolio'));
-
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-// Getting the contact.html file
+//Redirecting to the home page
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/contact.html');
+    res.sendFile('/index');
+});
+
+// Getting the other html files
+app.get('/index', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/public/about.html');
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/public/contact.html');
 });
 
 // Handling form submission and sending it to the server
