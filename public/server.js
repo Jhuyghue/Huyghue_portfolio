@@ -1,26 +1,26 @@
 const express = require('express');
-const path = require('path'); // Import path for handling file paths
+const path = require('path');
 const app = express();
 const port = 3001; // Linking with port "3001"
 
 // Middleware for parsing URL-encoded data
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware to serve static files from the "public" folder
+// Middleware to serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Redirecting to the home page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Getting other HTML files
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+    res.sendFile(path.join(__dirname, 'about.html'));
 });
 
 app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
 // Handling form submission and sending it to the server
@@ -36,3 +36,4 @@ app.post('/submit', (req, res) => {
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
+
